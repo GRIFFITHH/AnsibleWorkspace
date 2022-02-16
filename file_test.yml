@@ -21,3 +21,7 @@
     file:
       path: /home/worker/test/test.txt
       state: touch
+  
+  - name: create file
+    #command: "ls -l"
+    shell: "ls -l > /home/worker/test/output.txt"
