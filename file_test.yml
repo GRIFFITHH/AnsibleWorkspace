@@ -18,5 +18,5 @@
 
   - name: touch file
     file:
-      path: /home/worker/test/test.txt
+      path: /home/ansible/test/test.txt
       state: touch
