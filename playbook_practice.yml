@@ -1,0 +1,10 @@
+---
+- name: playbook practice
+  hosts: host1
+  remote_user: root
+  gather_facts: True
+  tasks:
+  - name: make directory
+    file:
+      path: /home/worker/data
+      state: directory
