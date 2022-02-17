@@ -7,4 +7,4 @@
     register: userid
 
 - debug:
-    bug: "current user {{ userid }}"
+    msg: "current user {{ userid }}"
