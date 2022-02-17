@@ -17,7 +17,7 @@
       update_cache: yes
       name: apache2, php
       state: present
-    when: ansible_facts[ "distribution" ] == "Ubuntu"
+    when: ansible_facts[ "distribution" ] == "Ubuntu" #얘를 만족해야 위의 명령어들이 작동한다.
     
   - name: Install Httpd package
     yum:
