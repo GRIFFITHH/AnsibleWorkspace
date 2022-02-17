@@ -6,5 +6,5 @@
     command: whoami
     register: userid
 
-- debug:
-    msg: "current user {{ userid }}"
+  - debug:
+      msg: "current user {{ userid }}"
