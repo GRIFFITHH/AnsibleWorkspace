@@ -1,7 +1,7 @@
 ---
 - name: show return value of command module
   hosts: all
-  gathering_facts: false
+  gathering_facts: no
   tasks:
   - name: capture output of id command
     command: id -un 
