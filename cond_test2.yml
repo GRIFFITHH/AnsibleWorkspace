@@ -1,0 +1,19 @@
+---
+- name: loop test
+  hosts: 192.168.0.6
+  gather_facts: False
+  vars:
+    scores: 95
+  tasks:
+  - name: score is excellent
+    shell: echo " grade A , excellent!!!"
+    register: grade
+    when: (score|int >= 90) #if절 같은 느낌이다. 이게 참일때 shell 의 명령어가 실행된다.
+    
+  - name: score is fail
+    shell: echo " grade fail!!!"
+    register: grade
+    when: (score|int < 60)
+    
+  - debug:
+      msg: "{{ grade }}"
