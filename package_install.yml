@@ -1,21 +1,24 @@
 ---
 - name: web service package install
   hosts: 192.168.0.6
-  gather_facts: False
+  gather_facts: False #이게 false여서
   tasks:
   - name: Collect only selected facts
-    setup:
+    setup: #setup 으로 몇개만 가져온 것
       filter:
-      - 'ansible_distribution'
+      - 'ansible_distribution' #이게 가져온 것
+      
+  - debug:
+      var=ansible_facts
   
   - name: Install Apache2 package
     apt:
       name: apache2, php
       state: present
-    when: ansible_facts[ "ansible_distribution" ] == "Ubuntu"
+    when: ansible_facts[ "distribution" ] == "Ubuntu"
     
   - name: Install Httpd package
     yum:
       name: httpd, php
       state: present
-    when: ansible_facts[ "ansible_distribution" ] == "CentOS"
+    when: ansible_facts[ "distribution" ] == "CentOS"
