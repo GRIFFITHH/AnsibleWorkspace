@@ -6,7 +6,7 @@
     message: "Hello, Ansible"
     hi: "hi ansible"
     hello: "ansible"
-    file_path: "/home/worker/temp"
+    file_path: "/home/ansible/temp"
   tasks:
   - name: create directory
     file:
@@ -15,5 +15,7 @@
   
   - debug:
       msg: "{{ hi }}"
+  - debug:
       msg: "{{ message }}"
+  - debug:
       msg: "{{ hello }}"
