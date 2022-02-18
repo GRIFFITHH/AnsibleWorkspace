@@ -1,4 +1,4 @@
----
+#task여서 --- 생략
 - name: "ls {{ path }}"
   shell: ls {{ path }}
   register: result
