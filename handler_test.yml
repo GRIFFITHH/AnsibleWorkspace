@@ -2,7 +2,8 @@
 - name: handler test
   hosts: all
   handlers:
-    - debug:
+    - name:
+      debug:
         msg: stop play
         
         
