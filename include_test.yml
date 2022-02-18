@@ -1,0 +1,15 @@
+---
+- name: include test
+  hosts: all
+  remote_user: root
+  tasks:
+  - name: include task
+    include: task.yml
+    vars:
+      path: /etc/ansible
+    register: result_task
+    
+  - debug:
+      msg: "{{ result_task.stdout }}"
+      
+#include 가 task 를 포함시킨다. import와는 다르게 전체 play를 가져오는게 아닌 task를 가져온다
