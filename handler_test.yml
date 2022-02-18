@@ -1,6 +1,6 @@
 ---
 - name: handler test
-  hosts: all
+  hosts: 192.168.0.108
   handlers:
     - name: stop message
       debug:
@@ -13,3 +13,7 @@
       notify: 
         - stop message
         
+    - name: status sshd
+      shell: systemctl status sshd
+      notify:
+        - stop message
