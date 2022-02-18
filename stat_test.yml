@@ -1,10 +1,10 @@
 ---
 - name: stat command test
-  hosts: 192.168.0.195
+  hosts: 192.168.0.108
   tasks:
   - name: Get stats of a file
     ansible.builtin.stat:
-      path: /etc/foo.conf
+      path: /etc/hosts
       register: st
       
   - debug:
