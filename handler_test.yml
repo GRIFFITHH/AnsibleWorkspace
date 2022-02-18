@@ -8,8 +8,8 @@
         
         
   tasks:
-    -name: excute ls
-     shell: ls
-     notify: 
-       - stop message
+    - name: excute ls
+      shell: ls
+      notify: 
+        - stop message
         
