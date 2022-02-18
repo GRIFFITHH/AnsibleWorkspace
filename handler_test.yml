@@ -10,14 +10,14 @@
   tasks:
     - name: excute ls
       shell: ls
-        var:
-          taskname: ls
+      var:
+        taskname: ls
       notify: 
         - stop message
         
     - name: status sshd
       shell: systemctl status sshd
-        var:
-          taskname: sshd
+      var:
+        taskname: sshd
       notify:
         - stop message
