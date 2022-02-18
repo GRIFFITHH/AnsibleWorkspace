@@ -9,3 +9,48 @@
     - a
     - b
     - c
+
+#다수의 유저를 추가
+  - name: add server user
+    user:
+      name: "{{item}}"
+      state: present
+      groups: worker
+    loop:
+      - { name: "worker1", group: "worker" }
+      - { name: "worker2", group: "worker" }
+      - { name: "worker3", group: "ansible" }
+      
+#   - name: add server user
+#     user: 
+#       name: "{{ item[ 0 ] }}"
+#       state: present
+#       groups: 
+      
+  - name: add server user
+    user:
+      name: "{{ item }}"
+      state: present
+      groups: worker
+    with_item:
+      - worker1
+      - worker2
+      - worker3
+       
+  - name: add server user ( no loop )
+    user:
+      name: worker1
+      state: present
+      groups: worker
+       
+  - name: add server user ( no loop )
+    user:
+      name: worker2
+      state: present
+      groups: worker
+       
+  - name: add server user ( no loop )
+    user:
+      name: worker3
+      state: present
+      groups: worker       
