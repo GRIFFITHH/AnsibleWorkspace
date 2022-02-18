@@ -5,5 +5,5 @@
   - debug:
       msg: main playbook
       
-  - name: import playbook
-    import_playbook: web.yml
+- name: import playbook
+  import_playbook: web.yml
